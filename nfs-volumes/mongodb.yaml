@@ -34,19 +34,19 @@ spec:
           - name: nfs-storage
             mountPath: /data/db
 
-      volumeClaimTemplates:
-      - metadata:
-          name: nfs-pvc
-        spec:
-          accessModes: ["ReadWriteMany"]
-          storageClassName: ""
-          resources:
-            requests:
-              storage: 1Gi
-      # volumes:
-      #   - name: nfs-storage
-      #     persistentVolumeClaim:
-      #       claimName: nfs-pvc
+      volumes:
+        - name: nfs-storage
+          persistentVolumeClaim:
+            claimName: nfs-pvc
+      # volumeClaimTemplates:
+      # - metadata:
+      #     name: nfs-pvc
+      #   spec:
+      #     accessModes: ["ReadWriteMany"]
+      #     storageClassName: ""
+      #     resources:
+      #       requests:
+      #         storage: 1Gi
 
 ---
 apiVersion: v1
