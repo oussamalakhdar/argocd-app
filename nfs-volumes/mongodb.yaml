@@ -30,9 +30,9 @@ spec:
             secretKeyRef:
               name: mongodb-secret
               key: mongodb-password
-          volumeMounts:
-            - name: nfs-storage
-              mountPath: /data/db
+        volumeMounts:
+          - name: nfs-storage
+            mountPath: /data/db
 
       volumeClaimTemplates:
       - metadata:
